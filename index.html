@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FM Fiesta 107.5</title>
-  <link rel="stylesheet" href="estilos.css" />
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-<!-- Intro Video -->
 
-<div id="intro" class="intro">
-  <video id="introVideo" muted playsinline preload="auto">
-    <source src="Animacion.mp4" type="video/mp4"></source>
-    Tu navegador no soporta el video.
-  </video>
-</div>
-
+  <!-- Intro Video -->
+  <div id="intro" class="intro">
+    <video id="introVideo" muted="muted" playsinline="playsinline" autoplay="autoplay" preload="auto">
+      <source src="Animacion.mp4" type="video/mp4"></source>
+      Tu navegador no soporta el video.
+    </video>
+    <button id="entrarBtn" class="btn-fallback">Entrar</button>
+  </div>
 
   <!-- Contenido principal -->
   <div id="mainContent" class="hidden">
@@ -32,38 +32,57 @@
     <section class="hero" id="en-vivo">
       <h1>FM Fiesta 107.5</h1>
       <p>¡Va con vos!</p>
-      <audio controls autoplay>
-        <source src="https://stream-173.zeno.fm/gcpy8w5vf48uv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJnY3B5OHc1dmY0OHV2IiwiaG9zdCI6InN0cmVhbS0xNzMuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6Ik9zYUNiTy1XVG95NkhmU0dRNlQzS2ciLCJpYXQiOjE3NTE5MTE1MTYsImV4cCI6MTc1MTkxMTU3Nn0._yki_CeskXKBPXv1UlM-L0-zRdZOjtinNlg-Kef4qkQ&fbclid=IwQ0xDSwLY6_RleHRuA2FlbQIxMAABHn6k4Rg9W2SxjfQKvlM4wqGEuzL6801EP5nHUcg_KUk_jSZzMxH02i62_AGH_aem_cJ0LEtAY_bbKp454LT3o5g" type="audio/mpeg"></source>
+      <audio controls="controls" autoplay="autoplay">
+        <source src="https://tu-streaming-url.com/stream" type="audio/mpeg"></source>
         Tu navegador no soporta el audio en vivo.
       </audio>
-  <p class="submensaje">Cadena Alegría retransmitiendo las 24hs</p>
-</section>
+      <p class="submensaje">Cadena Alegría retransmitiendo las 24hs</p>
+    </section>
+
+    <section class="contacto" id="contacto">
+      <h2>Contacto</h2>
+      <p>Mandanos un mensaje o escribinos por redes sociales</p>
+
+      <div class="botones-contacto">
+        <a href="https://wa.me/549XXXXXXXXXX" target="_blank" class="btn-wsp">WhatsApp al aire</a>
+        <a href="https://www.instagram.com/fmfiesta" target="_blank" class="btn-red">Instagram</a>
+        <a href="https://www.facebook.com/fmfiesta" target="_blank" class="btn-red">Facebook</a>
+      </div>
+    </section>
   </div>
 
-  <section class="contacto" id="contacto">
-  <h2>Contacto</h2>
-  <p>Mandanos un mensaje o escribinos por redes sociales</p>
+  <script>
+    const video = document.getElementById('introVideo');
+    const intro = document.getElementById('intro');
+    const main = document.getElementById('mainContent');
+    const fallbackBtn = document.getElementById('entrarBtn');
 
-  <div class="botones-contacto">
-    <a href="https://www.instagram.com/fmfiesta107.5?igsh=dXRoMTk1Y2l6eDBt" target="_blank" class="btn-red">Instagram</a>
-    <a href="https://www.facebook.com/share/1Ci2nCCaS3/?mibextid=wwXIfr" target="_blank" class="btn-red">Facebook</a>
-  </div>
-</section>
+    video.addEventListener('canplaythrough', function () {
+      video.play().catch(() => {
+        intro.classList.add('fade-out');
+        setTimeout(() => {
+          intro.style.display = "none";
+          main.classList.remove("hidden");
+        }, 600);
+      });
+    });
 
-<script>
-  const video = document.getElementById('introVideo');
-  const intro = document.getElementById('intro');
-  const main = document.getElementById('mainContent');
+    video.addEventListener('ended', function () {
+      intro.classList.add('fade-out');
+      setTimeout(function () {
+        intro.style.display = "none";
+        main.classList.remove("hidden");
+      }, 600);
+    });
 
-  video.addEventListener('canplaythrough', () => {
-    video.play();
-  });
-
-  video.addEventListener('ended', () => {
-    intro.style.display = "none";
-    main.classList.remove("hidden");
-  });
-</script>
-
+    fallbackBtn.addEventListener('click', function () {
+      intro.classList.add('fade-out');
+      setTimeout(function () {
+        intro.style.display = "none";
+        main.classList.remove("hidden");
+      }, 600);
+    });
+  </script>
 </body>
 </html>
+
