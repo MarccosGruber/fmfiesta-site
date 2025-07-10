@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
 * {
   margin: 0;
@@ -13,7 +13,6 @@ body, html {
   color: #fff;
 }
 
-/* Intro Video */
 .intro {
   position: fixed;
   inset: 0;
@@ -23,6 +22,7 @@ body, html {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  flex-direction: column;
 }
 
 .intro video {
@@ -32,8 +32,19 @@ body, html {
   background-color: black;
 }
 
+.btn-fallback {
+  position: absolute;
+  bottom: 30px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1001;
+}
 
-/* Main Content */
 .hidden {
   display: none;
 }
@@ -48,7 +59,7 @@ header {
 }
 
 .logo {
-  height: 20px;
+  height: 60px;
 }
 
 nav ul {
@@ -68,13 +79,12 @@ nav ul li a:hover {
   color: red;
 }
 
-/* Hero Section */
 .hero {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  min-height: 90vh;
   text-align: center;
   padding: 20px;
 }
@@ -91,18 +101,19 @@ nav ul li a:hover {
   margin-bottom: 30px;
 }
 
-.hero button {
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  background: red;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+.hero audio {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;
 }
-.hero button:hover {
-  background: #ff1a1a;
+
+.submensaje {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 0.75rem;
+  color: #aaa;
+  font-weight: 300;
+  text-align: center;
 }
 
 .contacto {
@@ -129,15 +140,6 @@ nav ul li a:hover {
   gap: 20px;
 }
 
-.btn-wsp {
-  background: #25d366;
-  color: white;
-  padding: 15px 25px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
 .btn-wsp:hover {
   background: #1ebe5d;
 }
@@ -151,15 +153,8 @@ nav ul li a:hover {
   font-weight: bold;
   transition: background 0.3s ease;
 }
+
 .btn-red:hover {
   background: #cc0000;
 }
 
-.submensaje {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  font-size: 0.1rem;
-  color: #383838;
-  font-weight: 300;
-  text-align: center;
-}
