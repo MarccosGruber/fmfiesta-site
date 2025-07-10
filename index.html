@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FM Fiesta 107.5</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .intro {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      transition: opacity 0.6s ease;
+    }
+
+    .intro.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .intro video {
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+      background-color: black;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #111;
+      border-bottom: 2px solid red;
+    }
+
+    .logo {
+      height: 60px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: red;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 90vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      color: #ddd;
+      margin-bottom: 30px;
+    }
+
+    .hero audio {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .submensaje {
+      margin-top: 15px;
+      margin-bottom: 20px;
+      font-size: 0.75rem;
+      color: #aaa;
+      font-weight: 300;
+      text-align: center;
+    }
+
+    .contacto {
+      padding: 60px 20px;
+      background-color: #111;
+      text-align: center;
+    }
+
+    .contacto h2 {
+      font-size: 2.5rem;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .contacto p {
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .botones-contacto {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .btn-wsp {
+      background: #25d366;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn-wsp:hover {
+      background: #1ebe5d;
+    }
+
+    .btn-red {
+      background: red;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn-red:hover {
+      background: #cc0000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Intro Video -->
+  <div id="intro" class="intro">
+    <video id="introVideo" muted="muted" playsinline="playsinline" autoplay="autoplay" preload="auto">
+      <source src="https://chat.openai.com/mnt/data/FM_Fiesta_Intro.mp4" type="video/mp4" />
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+
+  <!-- Contenido principal -->
+  <div id="mainContent" class="hidden">
+    <header>
+      <img src="https://chat.openai.com/mnt/data/FM_Fiesta_Logo.png" alt="FM Fiesta Logo" class="logo" />
+      <nav>
+        <ul>
+          <li><a href="#en-vivo">En Vivo</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero" id="en-vivo">
+      <h1>FM Fiesta 107.5</h1>
+      <p>¡Va con vos!</p>
+      <audio controls="controls" autoplay="autoplay">
+        <source src="https://tu-streaming-url.com/stream" type="audio/mpeg">
+        Tu navegador no soporta el audio en vivo.
+      </audio>
+      <p class="submensaje">Cadena Alegría retransmitiendo las 24hs</p>
+    </section>
+
+    <section class="contacto" id="contacto">
+      <h2>Contacto</h2>
+      <p>Mandanos un mensaje o escribinos por redes sociales</p>
+
+      <div class="botones-contacto">
+        <a href="https://wa.me/549XXXXXXXXXX" target="_blank" class="btn-wsp">WhatsApp al aire</a>
+        <a href="https://www.instagram.com/fmfiesta" target="_blank" class="btn-red">Instagram</a>
+        <a href="https://www.facebook.com/fmfiesta" target="_blank" class="btn-red">Facebook</a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const video = document.getElementById('introVideo');
+    const intro = document.getElementById('intro');
+    const main = document.getElementById('mainContent');
+
+    video.addEventListener('canplaythrough', function() {
+      video.play();
+    });
+
+    video.addEventListener('ended', function() {
+      intro.classList.add('fade-out');
+      setTimeout(function() {
+        intro.style.display = "none";
+        main.classList.remove("hidden");
+      }, 600);
+    });
+  </script>
+</body>
+</html>

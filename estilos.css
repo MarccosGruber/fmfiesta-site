@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* Intro Video */
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.intro video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  background-color: black;
+}
+
+
+/* Main Content */
+.hidden {
+  display: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #111;
+  border-bottom: 2px solid red;
+}
+
+.logo {
+  height: 20px;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: red;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+.hero button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.hero button:hover {
+  background: #ff1a1a;
+}
+
+.contacto {
+  padding: 60px 20px;
+  background-color: #111;
+  text-align: center;
+}
+
+.contacto h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.contacto p {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.botones-contacto {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.btn-wsp {
+  background: #25d366;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.btn-wsp:hover {
+  background: #1ebe5d;
+}
+
+.btn-red {
+  background: red;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.btn-red:hover {
+  background: #cc0000;
+}
+
+.submensaje {
+  margin-top: 300px;
+  margin-bottom: 20px;
+  font-size: 10px; /* más chico */
+  color: #aaa;
+  font-weight: 300;
+  text-align: center;
+}
