@@ -156,10 +156,10 @@ nav ul li a:hover {
 }
 
 .submensaje {
-  margin-top: 300px;
+  margin-top: 20px;
   margin-bottom: 20px;
-  font-size: 0.01rem;
-  color: #aaa;
+  font-size: 0.1rem;
+  color: #d3d3d3;
   font-weight: 300;
   text-align: center;
 }
